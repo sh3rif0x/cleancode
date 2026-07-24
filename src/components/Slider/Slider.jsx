@@ -1,20 +1,22 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import styles from "./style.module.css";
 
+const SLIDE_MS = 7000;
+
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=85",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1400&q=72&auto=format",
     alt: "Developer workspace with code on screen",
   },
   {
-    image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1920&q=85",
+    image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1400&q=72&auto=format",
     alt: "Team collaborating on a digital product",
   },
   {
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&q=85",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1400&q=72&auto=format",
     alt: "Close-up of software development",
   },
 ];
@@ -23,22 +25,37 @@ export default function Slider() {
   const { t, theme, mode, dir } = useLanguage();
   const [slide, setSlide] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [inView, setInView] = useState(true);
+  const rootRef = useRef(null);
 
   useEffect(() => {
-    if (paused) return undefined;
+    const node = rootRef.current;
+    if (!node) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (paused || !inView) return undefined;
     const timer = setInterval(() => {
       setSlide((prev) => (prev + 1) % slides.length);
-    }, 5500);
+    }, SLIDE_MS);
     return () => clearInterval(timer);
-  }, [paused]);
+  }, [paused, inView]);
 
   const next = () => setSlide((p) => (p + 1) % slides.length);
   const prev = () => setSlide((p) => (p - 1 + slides.length) % slides.length);
-
   const isRtl = dir === "rtl";
 
   return (
     <section
+      ref={rootRef}
       id="home"
       className={styles.slider}
       onMouseEnter={() => setPaused(true)}
@@ -68,7 +85,7 @@ export default function Slider() {
       />
       <div className={styles.vignette} />
 
-      <div className={styles.content} key={slide}>
+      <div className={styles.content}>
         <span className={styles.tagline} style={{ color: theme.accent }}>
           {t.hero.tagline}
         </span>
@@ -129,8 +146,11 @@ export default function Slider() {
       <div className={styles.progressTrack}>
         <div
           key={slide}
-          className={`${styles.progressBar} ${paused ? styles.progressPaused : ""}`}
-          style={{ background: theme.accent }}
+          className={`${styles.progressBar} ${paused || !inView ? styles.progressPaused : ""}`}
+          style={{
+            background: theme.accent,
+            animationDuration: `${SLIDE_MS}ms`,
+          }}
         />
       </div>
     </section>

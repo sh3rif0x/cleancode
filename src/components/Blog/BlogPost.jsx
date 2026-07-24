@@ -153,7 +153,7 @@ export default function BlogPost({ slug }) {
   const secondHalf = copy.sections.slice(mid);
 
   return (
-    <div dir={dir} className={styles.page} style={{ background: theme.bg, color: theme.text }}>
+    <div dir={dir} className={`${styles.page} pageEnter`} style={{ background: theme.bg, color: theme.text }}>
       <Header />
       <main className={styles.shell}>
         <div className={styles.layout}>
@@ -162,7 +162,7 @@ export default function BlogPost({ slug }) {
               {t.blog.back}
             </Link>
 
-            <header className={styles.postHeader}>
+            <header className={`${styles.postHeader} pageEnter`}>
               <h1 className={styles.postTitle}>{copy.title}</h1>
               <p className={styles.postCategory} style={{ color: theme.accent }}>
                 {post.category[lang]}
@@ -170,7 +170,7 @@ export default function BlogPost({ slug }) {
             </header>
 
             <div
-              className={styles.postHero}
+              className={`${styles.postHero} pageEnter`}
               style={{ backgroundImage: `url(${post.image})`, borderColor: theme.border }}
             />
 

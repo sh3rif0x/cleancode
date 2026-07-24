@@ -2,6 +2,7 @@
 import { useForm, ValidationError } from "@formspree/react";
 import { useLanguage } from "../../context/LanguageContext";
 import { CONTACT, SOCIAL_LINKS } from "../../data/contact";
+import AnimateOnScroll from "../AnimateOnScroll/AnimateOnScroll";
 import styles from "./style.module.css";
 
 export default function Contact() {
@@ -10,29 +11,39 @@ export default function Contact() {
 
   return (
     <section id="contact" className={styles.contact}>
-      <h2 style={{ color: theme.text }}>{t.contact.title}</h2>
-      <p style={{ color: theme.subtext }}>{t.contact.desc}</p>
+      <AnimateOnScroll as="h2" from="up" style={{ color: theme.text }}>
+        {t.contact.title}
+      </AnimateOnScroll>
+      <AnimateOnScroll as="p" from="up" delay={80} style={{ color: theme.subtext }}>
+        {t.contact.desc}
+      </AnimateOnScroll>
 
       <div className={styles.infoRow}>
-        <a
+        <AnimateOnScroll
+          as="a"
           href={CONTACT.emailHref}
+          from="left"
+          delay={100}
           className={styles.infoCard}
           style={{ background: theme.bg2, borderColor: theme.border, color: theme.text }}
         >
           <span style={{ color: theme.accent }}>{t.contact.email}</span>
           <strong>{CONTACT.email}</strong>
-        </a>
-        <a
+        </AnimateOnScroll>
+        <AnimateOnScroll
+          as="a"
           href={CONTACT.phoneHref}
+          from="right"
+          delay={180}
           className={styles.infoCard}
           style={{ background: theme.bg2, borderColor: theme.border, color: theme.text }}
         >
           <span style={{ color: theme.accent }}>{t.contact.phoneLabel}</span>
           <strong>{CONTACT.phone}</strong>
-        </a>
+        </AnimateOnScroll>
       </div>
 
-      <div className={styles.socials}>
+      <AnimateOnScroll from="up" delay={120} className={styles.socials}>
         <p style={{ color: theme.subtext }}>{t.footer.followUs}</p>
         <div className={styles.socialRow}>
           {SOCIAL_LINKS.map((social) => (
@@ -52,15 +63,15 @@ export default function Contact() {
             </a>
           ))}
         </div>
-      </div>
+      </AnimateOnScroll>
 
       {state.succeeded ? (
-        <div className={styles.successBox}>
+        <AnimateOnScroll from="scale" className={styles.successBox}>
           <h3 style={{ color: theme.text }}>{t.contact.successTitle}</h3>
           <p style={{ color: theme.subtext }}>{t.contact.success}</p>
-        </div>
+        </AnimateOnScroll>
       ) : (
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <AnimateOnScroll as="form" from="up" delay={160} className={styles.form} onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
@@ -105,7 +116,7 @@ export default function Contact() {
           >
             {state.submitting ? t.contact.sending : t.contact.send}
           </button>
-        </form>
+        </AnimateOnScroll>
       )}
     </section>
   );

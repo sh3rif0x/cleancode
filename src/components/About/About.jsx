@@ -1,5 +1,6 @@
 "use client";
 import { useLanguage } from "../../context/LanguageContext";
+import AnimateOnScroll from "../AnimateOnScroll/AnimateOnScroll";
 import styles from "./style.module.css";
 
 export default function About() {
@@ -7,8 +8,12 @@ export default function About() {
 
   return (
     <section id="about" className={styles.about}>
-      <h2 style={{ color: theme.text }}>{t.about.title}</h2>
-      <p style={{ color: theme.subtext }}>{t.about.desc}</p>
+      <AnimateOnScroll as="h2" from="up" style={{ color: theme.text }}>
+        {t.about.title}
+      </AnimateOnScroll>
+      <AnimateOnScroll as="p" from="up" delay={120} style={{ color: theme.subtext }}>
+        {t.about.desc}
+      </AnimateOnScroll>
     </section>
   );
 }

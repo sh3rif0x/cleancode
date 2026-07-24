@@ -9,7 +9,7 @@ export default function ServicesPage() {
   const { t, theme, dir } = useLanguage();
 
   return (
-    <div dir={dir} style={{ background: theme.bg, color: theme.text }}>
+    <div dir={dir} className="pageEnter" style={{ background: theme.bg, color: theme.text }}>
       <Header />
       <main className={styles.pageShell}>
         <div>

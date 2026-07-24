@@ -1,5 +1,6 @@
 "use client";
 import { useLanguage } from "../../context/LanguageContext";
+import AnimateOnScroll from "../AnimateOnScroll/AnimateOnScroll";
 import styles from "./style.module.css";
 
 const SERVICE_ICONS = {
@@ -51,13 +52,19 @@ export default function Services({ showTitle = true }) {
 
   return (
     <section id="services" className={`${styles.services}${showTitle ? "" : ` ${styles.embedded}`}`}>
-      {showTitle ? <h2 style={{ color: theme.text }}>{t.services.title}</h2> : null}
+      {showTitle ? (
+        <AnimateOnScroll as="h2" from="up" style={{ color: theme.text }}>
+          {t.services.title}
+        </AnimateOnScroll>
+      ) : null}
 
       <div className={styles.grid}>
-        {t.services.items.map((item) => (
-          <div
+        {t.services.items.map((item, i) => (
+          <AnimateOnScroll
             key={item.id}
             id={item.id}
+            from={i % 2 === 0 ? "left" : "right"}
+            delay={(i % 3) * 100}
             className={styles.card}
             style={{ background: theme.card, border: `1px solid ${theme.border}` }}
           >
@@ -75,7 +82,7 @@ export default function Services({ showTitle = true }) {
               <h3 style={{ color: theme.accent }}>{item.title}</h3>
               <p style={{ color: theme.subtext }}>{item.desc}</p>
             </div>
-          </div>
+          </AnimateOnScroll>
         ))}
       </div>
     </section>

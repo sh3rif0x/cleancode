@@ -8,6 +8,7 @@ import About from "../About/About";
 import LatestProjects from "../LatestProjects/LatestProjects";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
+import AnimateOnScroll from "../AnimateOnScroll/AnimateOnScroll";
 import { useLanguage } from "../../context/LanguageContext";
 import styles from "./style.module.css";
 
@@ -105,13 +106,13 @@ export default function Home() {
   }, [statsTargets]);
 
   return (
-    <div dir={dir} className={styles.page} style={{ background: theme.bg, color: theme.text }}>
+    <div dir={dir} className={`${styles.page} pageEnter`} style={{ background: theme.bg, color: theme.text }}>
       <Header />
 
       <Slider />
 
       <section className={styles.hero}>
-        <div className={styles.heroContent}>
+        <AnimateOnScroll from="left" className={styles.heroContent}>
           <span className={styles.tagline} style={{ color: theme.accent }}>
             {t.hero.tagline}
           </span>
@@ -125,37 +126,38 @@ export default function Home() {
               {t.hero.secondaryCta}
             </Link>
           </div>
-        </div>
+        </AnimateOnScroll>
 
         <div className={styles.heroCards}>
-          <div className={styles.heroCard} style={{ background: theme.bg2, borderColor: theme.border }}>
-            <h3 style={{ color: theme.accent }}>{counts[0]}{statsTargets[0].suffix}</h3>
-            <p style={{ color: theme.text }}>{statsTargets[0].label}</p>
-          </div>
-          <div className={styles.heroCard} style={{ background: theme.bg2, borderColor: theme.border }}>
-            <h3 style={{ color: theme.accent }}>{counts[1]}{statsTargets[1].suffix}</h3>
-            <p style={{ color: theme.text }}>{statsTargets[1].label}</p>
-          </div>
-          <div className={styles.heroCard} style={{ background: theme.bg2, borderColor: theme.border }}>
-            <h3 style={{ color: theme.accent }}>{counts[2]}{statsTargets[2].suffix}</h3>
-            <p style={{ color: theme.text }}>{statsTargets[2].label}</p>
-          </div>
-          <div className={styles.heroCard} style={{ background: theme.bg2, borderColor: theme.border }}>
-            <h3 style={{ color: theme.accent }}>{counts[3]}{statsTargets[3].suffix}</h3>
-            <p style={{ color: theme.text }}>{statsTargets[3].label}</p>
-          </div>
+          {statsTargets.map((stat, i) => (
+            <AnimateOnScroll
+              key={stat.label}
+              from="right"
+              delay={i * 90}
+              className={styles.heroCard}
+              style={{ background: theme.bg2, borderColor: theme.border }}
+            >
+              <h3 style={{ color: theme.accent }}>
+                {counts[i]}
+                {stat.suffix}
+              </h3>
+              <p style={{ color: theme.text }}>{stat.label}</p>
+            </AnimateOnScroll>
+          ))}
         </div>
       </section>
 
       <section className={`${styles.section} ${styles.integrationSection}`}>
-        <div className={`${styles.sectionHeader} ${styles.sectionHeaderCenter}`}>
+        <AnimateOnScroll from="up" className={`${styles.sectionHeader} ${styles.sectionHeaderCenter}`}>
           <h2 style={{ color: theme.text }}>{t.home.integration.title}</h2>
           <p style={{ color: theme.subtext }}>{t.home.integration.desc}</p>
-        </div>
+        </AnimateOnScroll>
         <div className={styles.integrationGrid}>
-          {integrations.map((item) => (
-            <div
+          {integrations.map((item, i) => (
+            <AnimateOnScroll
               key={item.label}
+              from="up"
+              delay={Math.min(i * 50, 400)}
               className={styles.integrationCard}
               style={{ background: theme.bg2, borderColor: theme.border }}
               title={item.label}
@@ -165,16 +167,16 @@ export default function Home() {
                 <img src={item.logo} alt="" className={styles.integrationLogo} />
               </div>
               <span style={{ color: theme.text }}>{item.label}</span>
-            </div>
+            </AnimateOnScroll>
           ))}
         </div>
       </section>
 
       <section className={styles.section}>
-        <div className={styles.sectionHeader}>
+        <AnimateOnScroll from="up" className={styles.sectionHeader}>
           <h2 style={{ color: theme.text }}>{t.home.tech.title}</h2>
           <p style={{ color: theme.subtext }}>{t.home.tech.desc}</p>
-        </div>
+        </AnimateOnScroll>
         <div className={styles.techGrid}>
           {techStack.map((tech) => (
             <div
@@ -188,11 +190,7 @@ export default function Home() {
               aria-label={tech.label}
               title={tech.label}
             >
-              <img
-                src={tech.logo}
-                alt={tech.label}
-                className={styles.techLogo}
-              />
+              <img src={tech.logo} alt={tech.label} className={styles.techLogo} />
               <p>{tech.label}</p>
             </div>
           ))}

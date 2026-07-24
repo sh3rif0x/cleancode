@@ -44,7 +44,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div dir={dir} style={{ background: theme.bg, color: theme.text }}>
+    <div dir={dir} className="pageEnter" style={{ background: theme.bg, color: theme.text }}>
       <Header />
       <main className={styles.page}>
         <div className={styles.intro}>

@@ -2,13 +2,16 @@
 import Link from "next/link";
 import { useLanguage } from "../../context/LanguageContext";
 import { CONTACT, SOCIAL_LINKS } from "../../data/contact";
+import AnimateOnScroll from "../AnimateOnScroll/AnimateOnScroll";
 import styles from "./style.module.css";
 
 export default function Footer() {
   const { t, theme } = useLanguage();
 
   return (
-    <footer
+    <AnimateOnScroll
+      as="footer"
+      from="up"
       className={styles.footer}
       style={{ background: theme.bg2, borderTop: `1px solid ${theme.border}` }}
     >
@@ -73,6 +76,6 @@ export default function Footer() {
       <div className={styles.bottom} style={{ borderTop: `1px solid ${theme.border}`, color: theme.subtext }}>
         {t.footer.rights}
       </div>
-    </footer>
+    </AnimateOnScroll>
   );
 }

@@ -189,7 +189,7 @@ a.secondary {
 
 @media (max-width: 960px) {
     .pageShell {
-        padding: 90px 28px 40px;
+        padding: 40px 20px 40px;
     }
     .cardGrid {
         grid-template-columns: 1fr 1fr;
@@ -197,7 +197,21 @@ a.secondary {
 }
 
 @media (max-width: 680px) {
+    .pageShell {
+        padding: 28px 16px 36px;
+    }
+
+    .pageTitle {
+        font-size: 2rem;
+    }
+
     .cardGrid {
         grid-template-columns: 1fr;
+    }
+
+    .card,
+    .sectionBox {
+        padding: 20px;
+        border-radius: 16px;
     }
 }
