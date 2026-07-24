@@ -1,0 +1,5 @@
+.page {
+  font-family: sans-serif;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}

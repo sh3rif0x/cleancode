@@ -1,0 +1,40 @@
+.projects {
+  padding: 60px;
+  text-align: center;
+}
+
+.projects h2 {
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: start;
+}
+
+.image {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.body {
+  padding: 20px;
+}
+
+.body h3 {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .projects { padding: 40px 20px; }
+}

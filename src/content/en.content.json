@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "We build professional websites and web apps",
+    "desc": "Clean Code - a specialized web development company",
+    "cta": "Start your project now"
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      { "title": "Web Development", "desc": "Fast, modern sites built with Next.js" },
+      { "title": "Web Apps", "desc": "Complete interactive applications" },
+      { "title": "Support & Maintenance", "desc": "Continuous support for your project" }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "desc": "Clean Code is a team of developers specialized in building clean, scalable web solutions."
+  },
+  "projects": {
+    "title": "Latest Projects",
+    "items": [
+      { "title": "E-commerce Platform", "desc": "Full online store with dashboard", "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80" },
+      { "title": "Task Management App", "desc": "System for managing tasks and teams", "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" },
+      { "title": "Real Estate Website", "desc": "Landing site for property listings", "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "desc": "Send us a message and we'll get back to you soon",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "info": {
+      "email": "info@cleancode.com",
+      "phone": "+20 100 000 0000",
+      "address": "Cairo, Egypt"
+    }
+  },
+  "footer": {
+    "about": "A specialized company building professional, high-performance websites and web apps.",
+    "links": "Quick Links",
+    "servicesTitle": "Our Services",
+    "contactTitle": "Contact Us",
+    "rights": "© 2026 Clean Code. All rights reserved."
+  }
+}

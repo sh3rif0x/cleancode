@@ -1,0 +1,10 @@
+.about {
+  padding: 60px;
+  text-align: center;
+}
+
+.about p {
+  max-width: 600px;
+  margin: 16px auto 0;
+  line-height: 1.7;
+}
