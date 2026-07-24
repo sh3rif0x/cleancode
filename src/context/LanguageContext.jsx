@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState, useMemo } from "react";
+import { createContext, useContext, useState, useMemo, useEffect } from "react";
 import arContent from "../content/ar.content.json";
 import enContent from "../content/en.content.json";
 
@@ -30,9 +30,40 @@ export const themes = {
 
 const LanguageContext = createContext(null);
 
+function readStored(key, fallback) {
+  if (typeof window === "undefined") return fallback;
+  try {
+    const value = window.localStorage.getItem(key);
+    return value || fallback;
+  } catch {
+    return fallback;
+  }
+}
+
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState("ar");
   const [mode, setMode] = useState("dark");
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const storedLang = readStored("cc-lang", "ar");
+    const storedMode = readStored("cc-mode", "dark");
+    setLang(storedLang === "en" ? "en" : "ar");
+    setMode(storedMode === "light" ? "light" : "dark");
+    setReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!ready) return;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    try {
+      window.localStorage.setItem("cc-lang", lang);
+      window.localStorage.setItem("cc-mode", mode);
+    } catch {
+      /* ignore */
+    }
+  }, [lang, mode, ready]);
 
   const toggleLang = () => setLang((prev) => (prev === "ar" ? "en" : "ar"));
   const toggleMode = () => setMode((prev) => (prev === "dark" ? "light" : "dark"));

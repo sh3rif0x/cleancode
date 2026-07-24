@@ -1,54 +1,152 @@
 {
-  "nav": {
-    "home": "Home",
-    "services": "Services",
-    "about": "About",
-    "projects": "Projects",
-    "contact": "Contact"
-  },
-  "hero": {
-    "title": "We build professional websites and web apps",
-    "desc": "Clean Code - a specialized web development company",
-    "cta": "Start your project now"
-  },
-  "services": {
-    "title": "Our Services",
-    "items": [
-      { "title": "Web Development", "desc": "Fast, modern sites built with Next.js" },
-      { "title": "Web Apps", "desc": "Complete interactive applications" },
-      { "title": "Support & Maintenance", "desc": "Continuous support for your project" }
-    ]
-  },
-  "about": {
-    "title": "About Us",
-    "desc": "Clean Code is a team of developers specialized in building clean, scalable web solutions."
-  },
-  "projects": {
-    "title": "Latest Projects",
-    "items": [
-      { "title": "E-commerce Platform", "desc": "Full online store with dashboard", "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80" },
-      { "title": "Task Management App", "desc": "System for managing tasks and teams", "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" },
-      { "title": "Real Estate Website", "desc": "Landing site for property listings", "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" }
-    ]
-  },
-  "contact": {
-    "title": "Contact Us",
-    "desc": "Send us a message and we'll get back to you soon",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "send": "Send",
-    "info": {
-      "email": "info@cleancode.com",
-      "phone": "+20 100 000 0000",
-      "address": "Cairo, Egypt"
+    "nav": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About",
+        "projects": "Projects",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "hero": {
+        "tagline": "Digital agency",
+        "title": "We build professional websites and web apps",
+        "desc": "Clean Code delivers scalable products, fast integrations, and polished digital experiences.",
+        "cta": "Start your project now",
+        "secondaryCta": "View blog",
+        "readMore": "Explore blog"
+    },
+    "home": {
+        "stats": {
+            "clients": "Happy clients served",
+            "projects": "Projects completed",
+            "integrations": "Third-party integrations",
+            "technologies": "Technologies used"
+        },
+        "integration": {
+            "title": "Long experience integrating with third parties",
+            "desc": "We connect your product with local and international platforms so payments, maps, analytics, and tools work smoothly together."
+        },
+        "tech": {
+            "title": "Top technologies we use",
+            "desc": "A modern stack of web and app tools used to build reliable products with fast performance."
+        }
+    },
+    "services": {
+        "title": "Our Services",
+        "intro": "We offer a full suite of services to launch and grow your web or app product with speed and quality across Egypt.",
+        "items": [
+            {
+                "id": "development",
+                "title": "Web Development",
+                "desc": "High-performance websites built with Next.js, clean architecture, and SEO-ready structure so your business ranks and converts."
+            },
+            {
+                "id": "apps",
+                "title": "Web Apps & Dashboards",
+                "desc": "Custom web applications with secure auth, live data, and polished admin panels for teams that need real operational tools."
+            },
+            {
+                "id": "support",
+                "title": "Support & Maintenance",
+                "desc": "Ongoing updates, security patches, uptime monitoring, and performance tuning so your product stays stable after launch."
+            },
+            {
+                "id": "design",
+                "title": "UI/UX Design",
+                "desc": "Clear user flows, branded interfaces, and responsive layouts designed to feel premium on every screen size."
+            },
+            {
+                "id": "ecommerce",
+                "title": "E-commerce Solutions",
+                "desc": "Online stores with product catalogs, checkout, payment gateways, and inventory dashboards built for growth in Egypt."
+            },
+            {
+                "id": "integrations",
+                "title": "API & System Integrations",
+                "desc": "Connect payments, CRM, analytics, maps, and third-party tools into one reliable backend your product can depend on."
+            }
+        ],
+        "webTitle": "Web Development",
+        "webDesc": "Build modern, responsive websites with performance-first architecture, strong SEO, and fast load times.",
+        "appsTitle": "Web Apps & Dashboards",
+        "appsDesc": "Interactive applications with polished UI, user flows, and live data integrations for desktop and mobile.",
+        "supportTitle": "Support & Maintenance",
+        "supportDesc": "Continuous updates, security improvements, and environment monitoring so your product stays stable.",
+        "ctaTitle": "Need a custom solution?",
+        "ctaDesc": "Tell us your idea and we will help you plan the right product architecture and launch timeline.",
+        "ctaButton": "Contact us",
+        "flowTitle": "Specialized multi-stage service flow",
+        "flowDesc": "From discovery and design to development and launch, every service includes strong quality checks and simplified management."
+    },
+    "about": {
+        "title": "About Us",
+        "desc": "Clean Code is a software and programming company in Egypt building clean, scalable websites and web apps for businesses across all governorates.",
+        "intro": "Clean Code is a team of developers, designers, and product thinkers who build clean digital experiences for growing businesses in Cairo, Giza, Alexandria, and across Egypt.",
+        "missionTitle": "Our Mission",
+        "mission": "Deliver fully branded web products that scale, load fast, and make your business more visible online on Google and social channels.",
+        "visionTitle": "Our Vision",
+        "vision": "Help Egyptian clients integrate modern systems, launch quickly, and maintain strong user trust over time.",
+        "valuesTitle": "Our Values",
+        "values": "Transparency, fast delivery, great UX, and flexible collaboration are the foundation of every project.",
+        "footerTitle": "We build products for web and mobile-first audiences",
+        "footerDesc": "Every project is designed to work across devices and connect with tools like payments, analytics, and CRM systems — in Arabic and English."
+    },
+    "projects": {
+        "title": "Latest Projects",
+        "intro": "Discover our latest web projects and applications delivered with strong architecture and user experience for businesses in Egypt and beyond.",
+        "items": [
+            { "title": "E-commerce Platform", "desc": "Full online store with dashboard", "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&q=80" },
+            { "title": "Task Management App", "desc": "System for managing tasks and teams", "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" },
+            { "title": "Real Estate Website", "desc": "Landing site for property listings", "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" }
+        ]
+    },
+    "blog": {
+        "title": "Blog",
+        "intro": "Insights on web development, software in Egypt, product integrations, and modern digital growth — in Arabic and English.",
+        "readMore": "Read more",
+        "back": "← Back to blog",
+        "notFoundTitle": "Post not found",
+        "notFoundDesc": "This blog post does not exist or may have been moved.",
+        "searchPlaceholder": "Search articles...",
+        "latest": "Latest articles",
+        "connect": "Connect with us",
+        "messageUs": "Message us",
+        "whatsapp": "WhatsApp",
+        "ctaWhatsapp": "Talk on WhatsApp",
+        "share": "Share",
+        "noResults": "No articles match your search."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "desc": "Send us a message and we'll get back to you soon",
+        "name": "Name",
+        "email": "Email",
+        "phoneLabel": "Phone",
+        "phonePlaceholder": "Your phone number",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send message",
+        "sending": "Sending...",
+        "whatsapp": "WhatsApp",
+        "formTitle": "Send a message",
+        "infoTitle": "Contact information",
+        "workingHours": "Working hours",
+        "workingHoursValue": "Sun – Thu, 10:00 AM – 6:00 PM",
+        "successTitle": "Thank you!",
+        "success": "Your message has been sent successfully.",
+        "info": {
+            "email": "cleancode172@gmail.com",
+            "phone": "01032076679",
+            "address": "Cairo, Egypt",
+            "locationLabel": "Location"
+        }
+    },
+    "footer": {
+        "about": "A specialized company building professional, high-performance websites and web apps.",
+        "links": "Quick Links",
+        "servicesTitle": "Our Services",
+        "contactTitle": "Contact Us",
+        "followUs": "Follow us",
+        "rights": "© 2026 Clean Code. All rights reserved."
     }
-  },
-  "footer": {
-    "about": "A specialized company building professional, high-performance websites and web apps.",
-    "links": "Quick Links",
-    "servicesTitle": "Our Services",
-    "contactTitle": "Contact Us",
-    "rights": "© 2026 Clean Code. All rights reserved."
-  }
 }

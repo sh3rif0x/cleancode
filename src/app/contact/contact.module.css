@@ -1,0 +1,222 @@
+.page {
+  min-height: calc(100vh - 120px);
+  padding: 100px 60px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.intro h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+}
+
+.intro p {
+  margin: 0;
+  max-width: 720px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.4fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.infoPanel,
+.formPanel {
+  border: 1px solid;
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.infoPanel h2,
+.formPanel h2 {
+  margin: 0 0 20px;
+  font-size: 1.35rem;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  border: 1px solid;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+a.infoItem:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.infoItem span {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.infoItem strong {
+  font-size: 0.98rem;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.socialBlock {
+  margin-top: 24px;
+}
+
+.socialBlock h3 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.socialRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.socialLink {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.socialLink svg {
+  width: 17px;
+  height: 17px;
+}
+
+.socialLink:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: start;
+}
+
+.field span {
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid;
+  border-radius: 12px;
+  font-size: 0.98rem;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
+}
+
+.textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.submit {
+  align-self: flex-start;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.submit:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+.submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.error {
+  color: #f87171;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.successBox h2 {
+  margin: 0 0 12px;
+}
+
+.successBox p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.success {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .page {
+    padding: 90px 28px 40px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 80px 18px 32px;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+  }
+
+  .submit {
+    width: 100%;
+  }
+}

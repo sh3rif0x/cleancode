@@ -1,0 +1,411 @@
+.page {
+  min-height: 100vh;
+}
+
+.shell {
+  min-height: calc(100vh - 120px);
+  padding: 120px 48px 72px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 40px;
+  align-items: start;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.mainCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: 100px;
+}
+
+.widget {
+  border: 1px solid;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.widgetTitle {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.searchBox svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+.searchBox input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.latestList {
+  display: flex;
+  flex-direction: column;
+}
+
+.latestItem {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.latestItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.latestItem:first-child {
+  padding-top: 0;
+}
+
+.latestItem:hover {
+  opacity: 0.85;
+}
+
+.latestText {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.latestThumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+}
+
+.emptySearch {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.connectButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.connectBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.connectBtn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.connectBtn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.whatsappBtn {
+  background: #25d366;
+  color: #fff;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.listTitle,
+.postTitle {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.postHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.postCategory {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.postHero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 420px;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid;
+}
+
+.lead,
+.sectionText {
+  margin: 0;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sectionHeading {
+  margin: 8px 0 0;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  font-weight: 800;
+}
+
+.contentList {
+  margin: 0;
+  padding-inline-start: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1.7;
+}
+
+.contentList li::marker {
+  color: #38bdf8;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  align-self: center;
+  min-height: 48px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1rem;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+}
+
+.ctaBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.shareBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+.shareLabel {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.shareIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shareIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.shareIcon:hover {
+  transform: translateY(-2px);
+}
+
+.shareIcon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.backLink {
+  display: inline-flex;
+  width: fit-content;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  border: 1px solid;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  flex: 1;
+}
+
+.cardMeta {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.cardExcerpt {
+  margin: 0;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.readMore {
+  margin-top: 4px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+    order: 2;
+  }
+
+  .mainCol {
+    order: 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    padding: 96px 20px 48px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .postHero {
+    aspect-ratio: 16 / 10;
+    max-height: none;
+  }
+
+  .shareBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
